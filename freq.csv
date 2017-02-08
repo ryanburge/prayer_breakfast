@@ -1,0 +1,29 @@
+word,speaker,freq
+god,Trump,0.010507881
+god,Obama,0.013
+god,Bush 43,0.0124
+god,Clinton,0.005
+christ,Trump,0
+christ,Obama,0.001
+christ,Bush 43,0
+christ,Clinton,0.0007
+pray,Trump,0.003
+pray,Obama,0.013
+pray,Bush 43,0.036
+pray,Clinton,0.012
+faith,Trump,0
+faith,Obama,0.012847
+faith,Bush 43,0.011
+faith,Clinton,0.0049
+jesus,Trump,0
+jesus,Obama,0.001
+jesus,Bush 43,0
+jesus,Clinton,0.0005
+bible,Trump,0.000875657
+bible,Obama,0.0011
+bible,Bush 43,0
+bible,Clinton,0.000594884
+church,Trump,0.000875657
+church,Obama,0.001959717
+church,Bush 43,0.000729749
+church,Clinton,0.000793179
