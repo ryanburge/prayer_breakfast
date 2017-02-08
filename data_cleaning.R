@@ -1,0 +1,20 @@
+library(dplyr)
+library(tm)
+library(wordcloud2)
+prayer <- read.csv("prayer_breakfast.csv")
+
+trump <- filter(prayer, speaker == "Trump")
+obama <- filter(prayer, speaker == "Obama")
+bush43 <-filter(prayer, speaker == "Bush 43")
+clinton <-filter(prayer, speaker == "Clinton")
+bush41 <-filter(prayer, speaker == "Bush 41")
+reagan <-filter(prayer, speaker == "Reagan")
+ford <-filter(prayer, speaker == "Ford")
+nixon <-filter(prayer, speaker == "Nixon")
+
+
+wordCorpus <- Corpus(VectorSource(prayer$text))
+wordCorpus <- tm_map(wordCorpus, removePunctuation)
+wordCorpus <- tm_map(wordCorpus, content_transformer(tolower))
+wordCorpus <- tm_map(wordCorpus, removeWords, stopwords("english"))
+wordCorpus <- tm_map(wordCorpus, stripWhitespace)
