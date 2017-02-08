@@ -12,9 +12,16 @@ reagan <-filter(prayer, speaker == "Reagan")
 ford <-filter(prayer, speaker == "Ford")
 nixon <-filter(prayer, speaker == "Nixon")
 
-
-wordCorpus <- Corpus(VectorSource(prayer$text))
+## Getting the number of words by speech
+long <- filter(prayer, year == 2017)
+review_text <- paste(long$text, collapse=" ")
+review_source <- VectorSource(review_text)
+wordCorpus <- Corpus(review_source)
 wordCorpus <- tm_map(wordCorpus, removePunctuation)
 wordCorpus <- tm_map(wordCorpus, content_transformer(tolower))
 wordCorpus <- tm_map(wordCorpus, removeWords, stopwords("english"))
 wordCorpus <- tm_map(wordCorpus, stripWhitespace)
+
+dtm <- DocumentTermMatrix(wordCorpus)
+dtm2 <- as.matrix(dtm)
+rowSums(as.matrix(dtm2))
