@@ -19,7 +19,7 @@ tm_map(PlainTextDocument)
 tdm <- TermDocumentMatrix(docs) %>%
 as.matrix()
 colnames(tdm) <- c("Trump","Obama")
-print(xtable(head(tdm)), type="html")
+
 par(mfrow=c(1,1))
 comparison.cloud(tdm, random.order=FALSE, colors = c("indianred3","lightsteelblue3"),
 title.size=1.5, max.words=200)
