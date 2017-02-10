@@ -1,5 +1,5 @@
 library(tidytext)
-
+library(tidyr)
 prayer$text <- as.character(prayer$text)
 
 
@@ -13,7 +13,7 @@ cleaned_speech <- tidy_speech %>%
 cleaned_speech %>%
   count(word, sort = TRUE) 
 
-library(tidyr)
+
 bing <- get_sentiments("bing")
 
 speech_sentiment <- tidy_speech %>%
@@ -32,5 +32,5 @@ ggplot(speech_sentiment, aes(x=year, y=sentiment)) + geom_line(colour = "black",
   annotate("rect", xmin = 2000.5, xmax = 2008.4, ymin = 0, ymax = Inf,  alpha = .2, fill = "red")  + 
   annotate("rect", xmin = 2008.45, xmax = 2016.4, ymin = 0, ymax = Inf,  alpha = .2, fill = "blue")  + 
   annotate("rect", xmin = 2016.45, xmax = 2017.5, ymin = 0, ymax = Inf,  alpha = .2, fill = "red") + 
-  ggtitle("                        Sentiment in Annual Prayer Breakfast Address") + 
+  ggtitle("                        Sentiment in Annual Prayer Breakfast Addresses") + 
   xlab("Year") + ylab("Total Positive Sentiment")
