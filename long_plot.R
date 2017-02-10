@@ -10,8 +10,10 @@ ggplot(long, aes(x=year, y=words)) + geom_line(colour = "black", size = 1) + geo
   annotate("rect", xmin = 2000.5, xmax = 2008.4, ymin = 0, ymax = Inf,  alpha = .2, fill = "red")  + 
   annotate("rect", xmin = 2008.45, xmax = 2016.4, ymin = 0, ymax = Inf,  alpha = .2, fill = "blue")  + 
   annotate("rect", xmin = 2016.45, xmax = 2017.5, ymin = 0, ymax = Inf,  alpha = .2, fill = "red") + 
-  ggtitle("                        Number of Words in Annual Prayer Breakfast Address") + 
-  xlab("Year") + ylab("Number of Words")
+  ggtitle("                        Number of Words in Annual Prayer Breakfast Addresses") + 
+  xlab("Year") + ylab("Number of Words") + 
+  annotate("text", x = 2010, y = 50, label = "religioninpublic.blog", size = 5) + 
+  theme(text=element_text(size=16, family="KerkisSans"))
 
 long %>% group_by(party) %>% summarize(mean = mean(words, na.rm= TRUE))
 

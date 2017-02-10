@@ -94,7 +94,9 @@ ggplot(freq, aes(x=word, y=freq, group = speaker)) + geom_bar(aes(fill=speaker),
 scale_fill_manual("speaker", values = c("firebrick1","dodgerblue", "firebrick4", "dodgerblue4")) +
 ggtitle("       Religious Words Used by Each President at the Prayer Breakfast") +
 xlab("Word") + ylab("Percentage of Total Words Spoken") + 
-  theme(legend.title=element_blank())
+  theme(legend.title=element_blank()) + 
+  annotate("text", x = 1.5, y = .035, label = "religioninpublic.blog", size = 5) + 
+  theme(text=element_text(size=16, family="KerkisSans"))
 
 
 
